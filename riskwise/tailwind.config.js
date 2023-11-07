@@ -7,7 +7,7 @@ module.exports = {
         "main-color": "#7e5bef",
       },
       fontFamily: {
-        sans: ["Graphik", "sans-serif"],
+        "main-font": ["Graphik", "sans-serif"],
       },
     },
   },
