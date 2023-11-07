@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import { getAuth } from "./app/authSlice";
+import PrivateRoute from "./utils/privateRoute";
+import setAuthToken from "./utils/setAuthToken";
+import jwtDecode from "jwt-decode";
+import logo from "./logo.svg";
+
+import Home from "./pages";
+import About from "./pages/about";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-              <p className=' text-yellow-50 font-bold'>
-                  Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-            className=" text-white"
-            href="https://reactjs.org"
-            target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </div>
   );
 }
