@@ -134,7 +134,7 @@ const Contact = () => {
                 name="subject"
                 placeholder="enter your subject"
                 value={subject}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => setSubject(e.target.value)}
                 error={errors}
               />
             </label>
