@@ -58,6 +58,7 @@ module.exports = {
         "color-neutral3": "#757575",
         "color-neutral4": "#4B4B4B",
         "color-neutral5": "#212121",
+        "color-neutral6": "#fbfcfe",
       },
       fontFamily: {
         "main-font": ["Inter", "inter"],
