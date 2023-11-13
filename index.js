@@ -7,5 +7,5 @@ const server = require("http").createServer(app);
 
 // Start the Local Server
 server.listen(port, () => {
-  console.log(`BestHandymanEver app listening at http://localhost:${port}`);
+  console.log(`RiskWise app listening at http://localhost:${port}`);
 });
