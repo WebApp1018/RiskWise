@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 var cors = require("cors");
 
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 3000;
 const app = express();
 
 // General middlewares

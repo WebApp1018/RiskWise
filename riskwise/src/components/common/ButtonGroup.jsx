@@ -4,6 +4,7 @@ import classnames from "classnames";
 const ButtonGroup = ({
   text,
   type,
+  width,
   icon = false,
   iconImg,
   disabled = false,
@@ -12,7 +13,7 @@ const ButtonGroup = ({
   return (
     <button
       className={classnames(
-        "inline-flex rounded-sm border-[1px] font-semibold hover:cursor-pointer mx-1 my-1",
+        "inline-flex rounded-sm border-[1px] font-semibold hover:cursor-pointer justify-center items-center",
         {
           // Primary
           "bg-color-primary text-white text-[14px] leading-5 px-[14px] py-2 hover:bg-color-primary1 hover:shadow-sm focus:bg-color-primary2 focus:shadow-focus disabled:bg-color-primary-2 disabled:pointer-events-none":
@@ -117,23 +118,26 @@ const ButtonGroup = ({
             type === "md-li", // Medium
           "bg-white border-white text-color-primary text-[16px] leading-6 hover:shadow-sm focus:shadow-focus disabled:bg-color-primary-2 disabled:pointin-events-none":
             type === "lg-li", // Large
+        },
+        {
+          [width]: width,
         }
       )}
       disabled={disabled}
       onClick={clickHandler}
     >
       {icon === "left" ? (
-        <img src={`/images/icons/${iconImg}.svg`} className="mr-1" alt="" />
+        <img src={`/images/icons/${iconImg}.svg`} className="mr-2" alt="" />
       ) : null}
 
       {icon === "only" ? (
-        <img src={`/images/icons/${iconImg}.svg`} className="mr-1" alt="" />
+        <img src={`/images/icons/${iconImg}.svg`} className="" alt="" />
       ) : (
         <span>{text}</span>
       )}
 
       {icon === "right" ? (
-        <img src={`/images/icons/${iconImg}.svg`} className="ml-1" alt="" />
+        <img src={`/images/icons/${iconImg}.svg`} className="ml-2" alt="" />
       ) : null}
     </button>
   );

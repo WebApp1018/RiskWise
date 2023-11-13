@@ -4,9 +4,12 @@ import TextGroup from "../components/common/TextGroup";
 import InputGroup from "../components/common/InputGroup";
 import ButtonGroup from "../components/common/ButtonGroup";
 
-const Login = () => {
+const Contact = () => {
+  const [name, setName] = useState();
   const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [subject, setSubject] = useState();
+  const [message, setMessage] = useState();
+
   const [errors, setErrors] = useState();
 
   const onSubmit = (e) => {
@@ -95,12 +98,25 @@ const Login = () => {
         <TextGroup text="." type="h4-b" color="text-color-error1" />
         <div className="mt-10">
           <div>
-            <TextGroup text="Sign In" type="p2-m" />
+            <TextGroup text="ContactSupport" type="p2-m" />
           </div>
-          <div className=" text-color-neutral3 mt-3">
-            <TextGroup text="Welcome! Please signin to continue." type="p5-r" />
+          <div className="text-color-neutral3 mt-3">
+            <TextGroup
+              text="Welcome! Please use below form to contact."
+              type="p5-r"
+            />
           </div>
           <form className="" noValidate onSubmit={onSubmit}>
+            <label className="block mt-5 mb-2 text-[14px] font-medium text-color-neutral4">
+              Full Name
+              <InputGroup
+                name="name"
+                placeholder="enter your full name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                error={errors}
+              />
+            </label>
             <label className="block mt-5 mb-2 text-[14px] font-medium text-color-neutral4">
               Email Address
               <InputGroup
@@ -113,39 +129,32 @@ const Login = () => {
               />
             </label>
             <label className="block mt-5 mb-2 text-[14px] font-medium text-color-neutral4">
-              Password
+              Subject
               <InputGroup
-                name="password"
-                type="password"
-                placeholder="enter your password"
-                value={password}
+                name="subject"
+                placeholder="enter your subject"
+                value={subject}
                 onChange={(e) => setPassword(e.target.value)}
                 error={errors}
               />
             </label>
-            <div className="text-right">
-              <Link
-                className="hover:underline decoration-color-error"
-                to="/forgot"
-              >
-                <TextGroup
-                  text="Forgot your password?"
-                  type="p5-m"
-                  color="text-color-error"
-                />
-              </Link>
-            </div>
+            <label className="block mt-5 mb-2 text-[14px] font-medium text-color-neutral4">
+              Subject
+              <textarea
+                name="message"
+                placeholder="enter your message"
+                className="border border-color-neutral3 text-color-neutral5 text-sm focus:border-color-secondary block w-full p-1.5"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              />
+            </label>
             <div className="text-justify">
               <TextGroup
-                text="By clicking"
+                text="By clicking "
                 type="ol-m"
                 color="text-color-neutral3"
               />
-              <TextGroup
-                text=" Sign In"
-                type="ol-m"
-                color="text-color-primary"
-              />
+              <TextGroup text="Submit" type="ol-m" color="text-color-primary" />
               <TextGroup
                 text=" below, you agree to our Terms and Conditions and Privacy Policy."
                 type="ol-m"
@@ -154,38 +163,11 @@ const Login = () => {
             </div>
             <div className="mt-6 flex">
               <ButtonGroup
-                text="Sign"
+                text="Submit"
                 type="sm-pr"
                 width="w-full"
                 icon="left"
-                iconImg="arrow-right-circle"
-              />
-            </div>
-            <div className="flex justify-between items-center">
-              <div className="w-1/3 border-t-2"></div>
-              <div className="">
-                <TextGroup
-                  text="OR SIGN IN WITH"
-                  type="st-r"
-                  color="text-color-neutral3"
-                />
-              </div>
-              <div className="w-1/3 border-t-2"></div>
-            </div>
-            <div className="flex justify-between gap-[10px]">
-              <ButtonGroup
-                text="MAGIC LINK"
-                type="sm-pr"
-                width="w-1/2"
-                icon="left"
-                iconImg="link"
-              />
-              <ButtonGroup
-                text="OTP"
-                type="sm-pr"
-                width="w-1/2"
-                icon="left"
-                iconImg="smartphone"
+                iconImg="user-check"
               />
             </div>
             <div className="mt-8 text-center">
@@ -229,4 +211,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Contact;

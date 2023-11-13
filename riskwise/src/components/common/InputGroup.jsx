@@ -7,7 +7,7 @@ const InputGroup = ({
   value,
   error,
   icon,
-  type,
+  type = "text",
   onChange,
 }) => {
   return (

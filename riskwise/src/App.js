@@ -14,12 +14,17 @@ import ModalList from "./pages/modal";
 import About from "./pages/about";
 
 import Login from "./pages/login";
+import Register from "./pages/register";
+import Forgot from "./pages/forgot";
+import Reset from "./pages/reset";
+import Contact from "./pages/contact";
+import Privacy from "./pages/privacy";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login />} />
         <Route path="/typography" element={<Typography />} />
         <Route path="/button" element={<ButtonList />} />
         <Route path="/notification" element={<Notification />} />
@@ -27,6 +32,11 @@ function App() {
         <Route path="/about" element={<About />} />
 
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/forgot" element={<Forgot />} />
+        <Route path="/reset" element={<Reset />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy" element={<Privacy />} />
       </Routes>
     </div>
   );
