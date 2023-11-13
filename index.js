@@ -9,7 +9,6 @@ const app = express();
 // General middlewares
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(passport.initialize());
 app.use(cors());
 app.options("*", cors());
 app.use("/public", express.static("public"));
