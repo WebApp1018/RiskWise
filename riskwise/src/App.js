@@ -13,6 +13,8 @@ import Notification from "./pages/notification";
 import ModalList from "./pages/modal";
 import About from "./pages/about";
 
+import Login from "./pages/login";
+
 function App() {
   return (
     <div className="App">
@@ -23,6 +25,8 @@ function App() {
         <Route path="/notification" element={<Notification />} />
         <Route path="/modal" element={<ModalList />} />
         <Route path="/about" element={<About />} />
+
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
   );
