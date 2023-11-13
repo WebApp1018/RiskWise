@@ -1,7 +1,18 @@
 const express = require("express");
+const bodyParser = require("body-parser");
+const path = require("path");
+var cors = require("cors");
 
 const port = process.env.PORT || 5000;
 const app = express();
+
+// General middlewares
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(passport.initialize());
+app.use(cors());
+app.options("*", cors());
+app.use("/public", express.static("public"));
 
 const server = require("http").createServer(app);
 
