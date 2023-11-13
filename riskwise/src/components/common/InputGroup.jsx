@@ -20,7 +20,7 @@ const InputGroup = ({
 
       <input
         className={classnames(
-          "border border-color-neutral3 text-color-neutral5 text-sm focus:border-color-secondary block w-full p-1.5",
+          "border border-color-neutral3 focus:border-none text-color-neutral5 text-sm w-full p-1.5 3xl:p-2",
           {
             "ps-10": icon,
           }

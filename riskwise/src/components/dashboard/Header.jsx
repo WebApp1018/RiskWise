@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Search from "./Search";
+import TextGroup from "../common/TextGroup";
 
 const Header = () => {
   return (
@@ -19,7 +20,15 @@ const Header = () => {
             </small>
             <img src="/images/icons/bell.svg" alt="" />
           </div>
-          <div></div>
+          <div className="absolute w-[340px] rounded-md shadow-md mr-[-10px] mt-[10px]">
+            <div className=" h-12 border-b flex items-center px-4">
+              <TextGroup
+                text="Notifications"
+                type="p4-m"
+                color="text-color-neutral5"
+              />
+            </div>
+          </div>
         </div>
         <div className="relative ml-3">
           <div className="relative hover:cursor-pointer">
@@ -28,7 +37,7 @@ const Header = () => {
               src="/images/avatars/user-01.png"
               alt=""
             />
-            <div className=" bg-color-success absolute bottom-0 right-[5px] w-[6px] h-[6px] rounded-full shadow-sm"></div>
+            <div className="bg-color-success absolute bottom-0 right-[5px] w-[6px] h-[6px] rounded-full shadow-sm"></div>
           </div>
         </div>
       </div>

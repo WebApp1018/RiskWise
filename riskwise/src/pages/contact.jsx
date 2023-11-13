@@ -17,18 +17,17 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex">
-      <div
-        className="w-2/3 min-h-screen flex items-end"
-        style={{
-          backgroundImage: `url(/images/bg1.png)`,
-          backgroundRepeat: "round",
-        }}
-      >
-        <div className="w-full pl-5 pr-16 mb-5 text-white">
+    <div className="flex min-h-screen">
+      <div className="basis-2/3 relative">
+        <img
+          className="w-full h-full object-cover align-middle"
+          src="/images/bg1.jpg"
+          alt=""
+        />
+        <div className="absolute left-0 bottom-0 max-w-[800px] pl-8 3xl:pl-12 pr-16 mb-8 text-white">
           <TextGroup
             text="Unlock the Power of Governance, Risk Management, Compliance, and Assurance with Risk Wise."
-            type="h4-m"
+            type="h2-m"
           />
           <div className="mt-5">
             <div className="">
@@ -93,7 +92,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div className="w-1/3 px-7 mt-24 mb-10">
+      <div className="basis-1/3 px-7 3xl:px-16 mt-24 mb-10">
         <TextGroup text="Risk Wise" type="h4-b" />
         <TextGroup text="." type="h4-b" color="text-color-error1" />
         <div className="mt-10">
@@ -111,7 +110,6 @@ const Contact = () => {
               Full Name
               <InputGroup
                 name="name"
-                placeholder="enter your full name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 error={errors}
@@ -122,7 +120,6 @@ const Contact = () => {
               <InputGroup
                 name="email"
                 type="email"
-                placeholder="enter your email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 error={errors}
@@ -132,7 +129,6 @@ const Contact = () => {
               Subject
               <InputGroup
                 name="subject"
-                placeholder="enter your subject"
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
                 error={errors}
@@ -142,7 +138,6 @@ const Contact = () => {
               Subject
               <textarea
                 name="message"
-                placeholder="enter your message"
                 className="border border-color-neutral3 text-color-neutral5 text-sm focus:border-color-secondary block w-full p-1.5"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}

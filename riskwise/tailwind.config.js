@@ -66,6 +66,9 @@ module.exports = {
       boxShadow: {
         focus: "0 0 0 4px #F4EBFF, 0 1px 2px 0 rgba(16, 24, 40, 0.05)",
       },
+      screens: {
+        "3xl": "2000px",
+      },
     },
   },
   plugins: [],
