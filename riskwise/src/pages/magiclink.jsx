@@ -6,10 +6,8 @@ import ButtonGroup from "../components/common/ButtonGroup";
 
 import LeftSection from "../components/landingpage/LeftSection";
 
-const Register = () => {
+const MagicLink = () => {
   const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const [name, setName] = useState();
   const [errors, setErrors] = useState();
 
   const onSubmit = (e) => {
@@ -24,13 +22,10 @@ const Register = () => {
         <TextGroup text="." type="h4-b" color="text-color-error1" />
         <div className="mt-10 3xl:mt-[107px]">
           <div>
-            <TextGroup text="Sign Up" type="p2-m" />
+            <TextGroup text="Send Magic Link" type="p2-m" />
           </div>
-          <div className="text-color-neutral3 mt-3 3xl:mt-5">
-            <TextGroup
-              text="It's free to sign up and only takes a minute."
-              type="p5-r"
-            />
+          <div className="text-color-neutral3 mt-3">
+            <TextGroup text="Welcome! Please submit to Sign-in." type="p5-r" />
           </div>
           <form noValidate onSubmit={onSubmit}>
             <label className="block mt-5 text-[14px] font-medium text-color-neutral4">
@@ -43,36 +38,13 @@ const Register = () => {
                 error={errors}
               />
             </label>
-            <label className="block mt-5 text-[14px] font-medium text-color-neutral4">
-              Password
-              <InputGroup
-                name="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                error={errors}
-              />
-            </label>
-            <label className="block mt-5 text-[14px] font-medium text-color-neutral4">
-              Full Name
-              <InputGroup
-                name="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                error={errors}
-              />
-            </label>
-            <div className="text-justify mt-0 3xl:mt-5">
+            <div className="text-justify mt-3 3xl:mt-8">
               <TextGroup
                 text="By clicking "
                 type="ol-m"
                 color="text-color-neutral3"
               />
-              <TextGroup
-                text="Create Account"
-                type="ol-m"
-                color="text-color-primary"
-              />
+              <TextGroup text="Submit" type="ol-m" color="text-color-primary" />
               <TextGroup
                 text=" below, you agree to our Terms and Conditions and Privacy Policy."
                 type="ol-m"
@@ -81,25 +53,25 @@ const Register = () => {
             </div>
             <div className="mt-6 flex">
               <ButtonGroup
-                text="Creat Account"
+                text="Submit"
                 type="md-pr"
                 width="w-full"
                 icon="left"
-                iconImg="arrow-right-circle"
+                iconImg="lock"
               />
             </div>
             <div className="mt-8 text-center">
               <TextGroup
-                text="Already have an account? "
+                text="Don’t have an account? "
                 type="ol-m"
                 color="text-color-neutral3"
               />
               <Link
                 className="hover:underline decoration-color-primary"
-                to="/login"
+                to="/register"
               >
                 <TextGroup
-                  text="Sign In"
+                  text="Sign Up"
                   type="ol-m"
                   color="text-color-primary"
                 />
@@ -129,4 +101,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default MagicLink;

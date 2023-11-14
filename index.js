@@ -18,7 +18,6 @@ app.use(express.static(path.join(__dirname, "riskwise/build")));
 
 // Handle other requests by serving the index.html file
 app.get("*", (req, res) => {
-  console.log("123123");
   res.sendFile(path.join(__dirname, "riskwise/build/index.html"));
 });
 

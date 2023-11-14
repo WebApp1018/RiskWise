@@ -7,6 +7,7 @@ import Forgot from "./pages/forgot";
 import Reset from "./pages/reset";
 import Contact from "./pages/contact";
 import Privacy from "./pages/privacy";
+import MagicLink from "./pages/magiclink";
 import Dashboard from "./pages/dashboard";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/reset" element={<Reset />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<Privacy />} />
+        <Route path="/magiclink" element={<MagicLink />} />
 
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>

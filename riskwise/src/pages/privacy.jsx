@@ -70,7 +70,7 @@ const Privacy = () => {
           <div className="absolute pl-4 3xl:pl-8 pr-4 mt-5 3xl:mt-8 mb-8 left-0 bottom-0">
             <div className="mt-3">
               <TextGroup
-                text="©2019-2023 All Rights Reserved. Risk Wise ® is a registered trademark of ThinkFirm."
+                text="©2019-2023 All Rights Reserved. Risk Wise."
                 type="ol-m"
               />
             </div>
@@ -88,7 +88,7 @@ const Privacy = () => {
           </div>
         </div>
       </div>
-      <div className="basis-3/4 px-4 3xl:px-10 py-5 text-justify">
+      <div className="basis-3/4 px-4 3xl:px-10 my-5 3xl:my-8 text-justify">
         <div>
           <div>
             <TextGroup
