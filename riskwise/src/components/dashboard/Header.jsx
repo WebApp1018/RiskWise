@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Search from "./Search";
 import TextGroup from "../common/TextGroup";
+// import Budges from "../common/BudgeGroup";
 
 const Header = () => {
   return (
@@ -20,13 +21,18 @@ const Header = () => {
             </small>
             <img src="/images/icons/bell.svg" alt="" />
           </div>
-          <div className="absolute w-[340px] rounded-md shadow-md mr-[-10px] mt-[10px]">
-            <div className=" h-12 border-b flex items-center px-4">
+          <div className="absolute inset-0 bottom-auto left-auto w-[340px] border rounded-md shadow-md mt-[10px] transform translate-y-10 z-40 bg-white">
+            <div className="h-12 border-b flex items-center px-4">
               <TextGroup
                 text="Notifications"
-                type="p4-m"
+                type="p3-m"
                 color="text-color-neutral5"
               />
+            </div>
+            <div className="p-2">
+              <div className="flex px-3 py-2 rounded bg-white">
+                <div className="">{/* <Budges text="Budges" type="" /> */}</div>
+              </div>
             </div>
           </div>
         </div>
