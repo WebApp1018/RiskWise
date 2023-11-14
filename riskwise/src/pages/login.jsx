@@ -89,7 +89,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <div className="basis-1/3 px-7 3xl:px-16 mt-10 3xl:my-auto mb-10">
+      <div className="basis-1/3 px-7 3xl:px-16 mt-24 3xl:my-auto mb-10">
         <TextGroup text="Risk Wise" type="h4-b" />
         <TextGroup text="." type="h4-b" color="text-color-error1" />
         <div className="mt-10 3xl:mt-[107px]">
