@@ -8,7 +8,7 @@ const Privacy = () => {
       <div className="basis-1/4 relative">
         <img
           className="w-full h-full object-cover align-middle"
-          src="/images/bg1.jpg"
+          src="/images/bg1.png"
           alt=""
         />
         <div className="text-white">
@@ -23,42 +23,42 @@ const Privacy = () => {
             />
             <div className="mt-5">
               <div className="">
-                <TextGroup text="Seamless Integration:" type="p3-b" />
+                <TextGroup text="Seamless Integration:" type="p5-b" />
                 <TextGroup
                   text=" Risk Wise seamlessly integrates all facets of GRC into a unified platform, enhancing collaboration and boosting efficiency across your organization."
                   type="ol-m"
                 />
               </div>
               <div className="mt-3">
-                <TextGroup text="Real-time Insights:" type="p3-b" />
+                <TextGroup text="Real-time Insights:" type="p5-b" />
                 <TextGroup
                   text=" Gain actionable insights with our comprehensive analytics, providing the foresight needed to make informed decisions."
                   type="ol-m"
                 />
               </div>
               <div className="mt-3">
-                <TextGroup text="Assured Compliance:" type="p3-b" />
+                <TextGroup text="Assured Compliance:" type="p5-b" />
                 <TextGroup
                   text=" Navigate the complex regulatory landscape effortlessly while ensuring adherence to industry standards."
                   type="ol-m"
                 />
               </div>
               <div className="mt-3">
-                <TextGroup text="Risk Mitigation:" type="p3-b" />
+                <TextGroup text="Risk Mitigation:" type="p5-b" />
                 <TextGroup
                   text=" Identify and mitigate risks proactively, protecting your organization from potential threats."
                   type="ol-m"
                 />
               </div>
               <div className="mt-3">
-                <TextGroup text="Audits Made Easy:" type="p3-b" />
+                <TextGroup text="Audits Made Easy:" type="p5-b" />
                 <TextGroup
                   text=" Streamline audit processes and achieve compliance with ease."
                   type="ol-m"
                 />
               </div>
               <div className="mt-3">
-                <TextGroup text="User-friendly Interface:" type="p3-b" />
+                <TextGroup text="User-friendly Interface:" type="p5-b" />
                 <TextGroup
                   text=" Our intuitive design ensures that everyone in your organization can harness the power of Risk Wise."
                   type="ol-m"

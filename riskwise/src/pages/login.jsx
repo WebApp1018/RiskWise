@@ -18,10 +18,10 @@ const Login = () => {
       <div className="basis-2/3 relative">
         <img
           className="w-full h-full object-cover align-middle"
-          src="/images/bg1.jpg"
+          src="/images/bg1.png"
           alt=""
         />
-        <div className="absolute left-0 bottom-0 max-w-[800px] pl-8 3xl:pl-12 pr-16 mb-8 text-white">
+        <div className="absolute left-0 bottom-0 max-w-[1000px] pl-8 3xl:pl-12 pr-16 mb-8 text-white">
           <TextGroup
             text="Unlock the Power of Governance, Risk Management, Compliance, and Assurance with Risk Wise."
             type="h2-m"
@@ -34,48 +34,48 @@ const Login = () => {
                 type="p4-m"
               />
             </div>
-            <div className="mt-3">
+            <div className="mt-3 3xl:mt-8">
               <TextGroup text="Real-time Insights:" type="p3-b" />
               <TextGroup
                 text=" Gain actionable insights with our comprehensive analytics, providing the foresight needed to make informed decisions."
                 type="p4-m"
               />
             </div>
-            <div className="mt-3">
+            <div className="mt-3 3xl:mt-8">
               <TextGroup text="Assured Compliance:" type="p3-b" />
               <TextGroup
                 text=" Navigate the complex regulatory landscape effortlessly while ensuring adherence to industry standards."
                 type="p4-m"
               />
             </div>
-            <div className="mt-3">
+            <div className="mt-3 3xl:mt-8">
               <TextGroup text="Risk Mitigation:" type="p3-b" />
               <TextGroup
                 text=" Identify and mitigate risks proactively, protecting your organization from potential threats."
                 type="p4-m"
               />
             </div>
-            <div className="mt-3">
+            <div className="mt-3 3xl:mt-8">
               <TextGroup text="Audits Made Easy:" type="p3-b" />
               <TextGroup
                 text=" Streamline audit processes and achieve compliance with ease."
                 type="p4-m"
               />
             </div>
-            <div className="mt-3">
+            <div className="mt-3 3xl:mt-8">
               <TextGroup text="User-friendly Interface:" type="p3-b" />
               <TextGroup
                 text=" Our intuitive design ensures that everyone in your organization can harness the power of Risk Wise."
                 type="p4-m"
               />
             </div>
-            <div className="mt-3">
+            <div className="mt-3 3xl:mt-8">
               <TextGroup
                 text="©2019-2023 All Rights Reserved. Risk Wise ® is a registered trademark of ThinkFirm."
                 type="p4-m"
               />
             </div>
-            <div className="mt-3 flex">
+            <div className="mt-3 3xl:mt-8 flex">
               <Link className="mr-2 underline" to="/privacy">
                 Privacy Policy
               </Link>
@@ -89,10 +89,10 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <div className="basis-1/3 px-7 3xl:px-16 mt-24 mb-10">
+      <div className="basis-1/3 px-7 3xl:px-16 mt-10 3xl:my-auto mb-10">
         <TextGroup text="Risk Wise" type="h4-b" />
         <TextGroup text="." type="h4-b" color="text-color-error1" />
-        <div className="mt-10">
+        <div className="mt-10 3xl:mt-[107px]">
           <div>
             <TextGroup text="Sign In" type="p2-m" />
           </div>
@@ -100,7 +100,7 @@ const Login = () => {
             <TextGroup text="Welcome! Please signin to continue." type="p5-r" />
           </div>
           <form className="" noValidate onSubmit={onSubmit}>
-            <label className="block mt-5 mb-2 text-[14px] font-medium text-color-neutral4">
+            <label className="block mt-5 3xl:mt-8 text-[14px] font-medium text-color-neutral4">
               Email Address
               <InputGroup
                 name="email"
@@ -110,7 +110,7 @@ const Login = () => {
                 error={errors}
               />
             </label>
-            <label className="block mt-5 mb-2 text-[14px] font-medium text-color-neutral4">
+            <label className="block mt-5 3xl:mt-8 text-[14px] font-medium text-color-neutral4">
               Password
               <InputGroup
                 name="password"
@@ -120,7 +120,7 @@ const Login = () => {
                 error={errors}
               />
             </label>
-            <div className="text-right">
+            <div className="text-right mt-0 3xl:mt-3">
               <Link
                 className="hover:underline decoration-color-error"
                 to="/forgot"
@@ -132,7 +132,7 @@ const Login = () => {
                 />
               </Link>
             </div>
-            <div className="text-justify">
+            <div className="text-justify mt-3">
               <TextGroup
                 text="By clicking"
                 type="ol-m"
@@ -152,7 +152,7 @@ const Login = () => {
             <div className="mt-6 flex">
               <ButtonGroup
                 text="Sign"
-                type="sm-pr"
+                type="md-pr"
                 width="w-full"
                 icon="left"
                 iconImg="arrow-right-circle"
@@ -172,14 +172,14 @@ const Login = () => {
             <div className="flex justify-between gap-[10px]">
               <ButtonGroup
                 text="MAGIC LINK"
-                type="sm-pr"
+                type="md-pr"
                 width="w-1/2"
                 icon="left"
                 iconImg="link"
               />
               <ButtonGroup
                 text="OTP"
-                type="sm-pr"
+                type="md-pr"
                 width="w-1/2"
                 icon="left"
                 iconImg="smartphone"

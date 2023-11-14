@@ -21,10 +21,10 @@ const Contact = () => {
       <div className="basis-2/3 relative">
         <img
           className="w-full h-full object-cover align-middle"
-          src="/images/bg1.jpg"
+          src="/images/bg1.png"
           alt=""
         />
-        <div className="absolute left-0 bottom-0 max-w-[800px] pl-8 3xl:pl-12 pr-16 mb-8 text-white">
+        <div className="absolute left-0 bottom-0 max-w-[1000px] pl-8 3xl:pl-12 pr-16 mb-8 text-white">
           <TextGroup
             text="Unlock the Power of Governance, Risk Management, Compliance, and Assurance with Risk Wise."
             type="h2-m"
@@ -37,42 +37,42 @@ const Contact = () => {
                 type="p4-m"
               />
             </div>
-            <div className="mt-3">
+            <div className="mt-3 3xl:mt-8">
               <TextGroup text="Real-time Insights:" type="p3-b" />
               <TextGroup
                 text=" Gain actionable insights with our comprehensive analytics, providing the foresight needed to make informed decisions."
                 type="p4-m"
               />
             </div>
-            <div className="mt-3">
+            <div className="mt-3 3xl:mt-8">
               <TextGroup text="Assured Compliance:" type="p3-b" />
               <TextGroup
                 text=" Navigate the complex regulatory landscape effortlessly while ensuring adherence to industry standards."
                 type="p4-m"
               />
             </div>
-            <div className="mt-3">
+            <div className="mt-3 3xl:mt-8">
               <TextGroup text="Risk Mitigation:" type="p3-b" />
               <TextGroup
                 text=" Identify and mitigate risks proactively, protecting your organization from potential threats."
                 type="p4-m"
               />
             </div>
-            <div className="mt-3">
+            <div className="mt-3 3xl:mt-8">
               <TextGroup text="Audits Made Easy:" type="p3-b" />
               <TextGroup
                 text=" Streamline audit processes and achieve compliance with ease."
                 type="p4-m"
               />
             </div>
-            <div className="mt-3">
+            <div className="mt-3 3xl:mt-8">
               <TextGroup text="User-friendly Interface:" type="p3-b" />
               <TextGroup
                 text=" Our intuitive design ensures that everyone in your organization can harness the power of Risk Wise."
                 type="p4-m"
               />
             </div>
-            <div className="mt-3">
+            <div className="mt-3 3xl:mt-8">
               <TextGroup
                 text="©2019-2023 All Rights Reserved. Risk Wise ® is a registered trademark of ThinkFirm."
                 type="p4-m"
@@ -92,10 +92,10 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div className="basis-1/3 px-7 3xl:px-16 mt-24 mb-10">
+      <div className="basis-1/3 px-7 3xl:px-16 mt-24 3xl:my-auto mb-10">
         <TextGroup text="Risk Wise" type="h4-b" />
         <TextGroup text="." type="h4-b" color="text-color-error1" />
-        <div className="mt-10">
+        <div className="mt-10 3xl:mt-[107px]">
           <div>
             <TextGroup text="ContactSupport" type="p2-m" />
           </div>
@@ -106,7 +106,7 @@ const Contact = () => {
             />
           </div>
           <form className="" noValidate onSubmit={onSubmit}>
-            <label className="block mt-5 mb-2 text-[14px] font-medium text-color-neutral4">
+            <label className="block mt-5 text-[14px] font-medium text-color-neutral4">
               Full Name
               <InputGroup
                 name="name"
@@ -115,7 +115,7 @@ const Contact = () => {
                 error={errors}
               />
             </label>
-            <label className="block mt-5 mb-2 text-[14px] font-medium text-color-neutral4">
+            <label className="block mt-5 3xl:mt-8 mb-2 text-[14px] font-medium text-color-neutral4">
               Email Address
               <InputGroup
                 name="email"
@@ -125,7 +125,7 @@ const Contact = () => {
                 error={errors}
               />
             </label>
-            <label className="block mt-5 mb-2 text-[14px] font-medium text-color-neutral4">
+            <label className="block mt-5 3xl:mt-8 text-[14px] font-medium text-color-neutral4">
               Subject
               <InputGroup
                 name="subject"
@@ -134,16 +134,17 @@ const Contact = () => {
                 error={errors}
               />
             </label>
-            <label className="block mt-5 mb-2 text-[14px] font-medium text-color-neutral4">
-              Subject
+            <label className="block mt-5 3xl:mt-8 text-[14px] font-medium text-color-neutral4">
+              Message
               <textarea
                 name="message"
-                className="border border-color-neutral3 text-color-neutral5 text-sm focus:border-color-secondary block w-full p-1.5"
+                rows="5"
+                className="border border-color-neutral3 text-color-neutral5 text-sm focus:border-color-neutral4 focus:outline-none block w-full p-1.5"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               />
             </label>
-            <div className="text-justify">
+            <div className="text-justify mt-3 3xl:mt-8">
               <TextGroup
                 text="By clicking "
                 type="ol-m"
