@@ -28,7 +28,7 @@ const Login = () => {
           <div className=" text-color-neutral3 mt-3">
             <TextGroup text="Welcome! Please signin to continue." type="p5-r" />
           </div>
-          <form className="" noValidate onSubmit={onSubmit}>
+          <form noValidate onSubmit={onSubmit}>
             <label className="block mt-5  text-[14px] font-medium text-color-neutral4">
               Email Address
               <InputGroup

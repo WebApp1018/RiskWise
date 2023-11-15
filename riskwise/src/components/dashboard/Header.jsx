@@ -9,7 +9,7 @@ const Header = () => {
     <div className="h-[72px] fixed top-0 left-60 right-0 border-b bg-white flex items-center justify-between px-5 shadow-sm z-20">
       <div className="flex justify-center">
         <div className="flex items-center justify-center mr-5 hover:cursor-pointer">
-          <img src="/images/icons/align-justify.svg" alt=""></img>
+          <img src="/images/icons/menu-2.svg" alt=""></img>
         </div>
         <Search />
       </div>

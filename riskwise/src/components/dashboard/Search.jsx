@@ -9,8 +9,8 @@ const Search = () => {
         </div>
         <input
           type="search"
-          className="text-color-neutral5 p-2 ps-10 text-sm bg-gray-50"
-          placeholder="Search"
+          className="text-color-neutral5 p-2 ps-10 text-sm bg-gray-50 border border-color-neutral1 focus:outline-none focus:border-color-neutral3 w-72 rounded-sm"
+          placeholder="Search..."
         />
       </div>
     </form>

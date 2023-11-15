@@ -17,6 +17,9 @@ const Privacy = () => {
               <TextGroup text="Risk Wise" type="h3-b" />
               <TextGroup text="." type="h3-b" color="text-color-error1" />
             </div>
+          </div>
+
+          <div className="absolute pl-4 3xl:pl-8 pr-4 mt-5 3xl:mt-8 mb-8 left-0 bottom-0">
             <TextGroup
               text="Unlock the Power of Governance, Risk Management, Compliance, and Assurance with Risk Wise."
               type="p1-s"
@@ -65,9 +68,6 @@ const Privacy = () => {
                 />
               </div>
             </div>
-          </div>
-
-          <div className="absolute pl-4 3xl:pl-8 pr-4 mt-5 3xl:mt-8 mb-8 left-0 bottom-0">
             <div className="mt-3">
               <TextGroup
                 text="©2019-2023 All Rights Reserved. Risk Wise."
