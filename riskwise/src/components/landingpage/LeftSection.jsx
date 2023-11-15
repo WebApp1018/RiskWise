@@ -4,7 +4,7 @@ import TextGroup from "../common/TextGroup";
 
 const LeftSection = () => {
   return (
-    <div className="basis-2/3 relative">
+    <div className="basis-2/3 relative min-h-[700px]">
       <img
         className="w-full h-full object-cover align-middle"
         src="/images/bg1.png"

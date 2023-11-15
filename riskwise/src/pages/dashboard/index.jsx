@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Layout from "../../components/dashboard/Layout";
+import classnames from "classnames";
+import Header from "../../components/dashboard/Header";
+import Sidebar from "../../components/dashboard/Sidebar";
 import TextGroup from "../../components/common/TextGroup";
 
 const Dashboard = () => {
+  const [showSidebar, setShowSidebar] = useState(true);
+
   return (
     <div className="bg-color-neutral6 z-10">
-      <Layout />
-      <div className="mt-[72px] ml-60 pt-5 px-5">
+      <Header showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+      <Sidebar showSidebar={showSidebar} />
+      <div
+        className={classnames("mt-[72px] pt-5 px-5", { "ml-60": showSidebar })}
+      >
         {/* Main Content */}
 
-        <div>
+        <div className=" min-h-screen">
           <div className="flex gap-1 text-color-neutral3">
             <Link className="hover:underline" to="/dashboard">
               <TextGroup text="Dashboard" type="p5-m" />
