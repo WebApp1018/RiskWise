@@ -10,7 +10,7 @@ const LeftSection = () => {
         src="/images/bg1.png"
         alt=""
       />
-      <div className="absolute left-0 bottom-0 max-w-[1000px] pl-8 3xl:pl-12 pr-16 mb-8 text-white">
+      <div className="absolute left-0 bottom-0 max-w-[800px] pl-8 3xl:pl-12 pr-16 mb-8 text-white">
         <TextGroup
           text="Unlock the Power of Governance, Risk Management, Compliance, and Assurance with Risk Wise."
           type="h2-m"

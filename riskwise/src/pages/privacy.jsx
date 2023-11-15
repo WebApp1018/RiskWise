@@ -5,7 +5,7 @@ import TextGroup from "../components/common/TextGroup";
 const Privacy = () => {
   return (
     <div className="flex min-h-screen">
-      <div className="basis-1/4 relative">
+      <div className="w-[400px] relative">
         <img
           className="w-full h-full object-cover align-middle"
           src="/images/bg1.png"
