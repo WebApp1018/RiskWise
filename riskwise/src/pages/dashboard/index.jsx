@@ -17,7 +17,7 @@ const Dashboard = () => {
       >
         {/* Main Content */}
 
-        <div className=" min-h-screen">
+        <div className="">
           <div className="flex gap-1 text-color-neutral3">
             <Link className="hover:underline" to="/dashboard">
               <TextGroup text="Dashboard" type="p5-m" />
@@ -39,11 +39,32 @@ const Dashboard = () => {
               color="text-color-neutral3"
             />
           </div>
+          <div className="mt-5">
+            <TextGroup
+              text="The dashboard below provides a comprehensive and personalized view, tailored to your needs. It offers a wealth of insights and information that empowers you to make informed and effective decisions. Unlock the power of data-driven decision-making and seize new opportunities with confidence."
+              type="p5-m"
+              color="text-color-neutral3"
+            />
+          </div>
+          <div className="mt-5">
+            <TextGroup
+              text="The dashboard below provides a comprehensive and personalized view, tailored to your needs. It offers a wealth of insights and information that empowers you to make informed and effective decisions. Unlock the power of data-driven decision-making and seize new opportunities with confidence."
+              type="p5-m"
+              color="text-color-neutral3"
+            />
+          </div>
+          <div className="mt-5">
+            <TextGroup
+              text="The dashboard below provides a comprehensive and personalized view, tailored to your needs. It offers a wealth of insights and information that empowers you to make informed and effective decisions. Unlock the power of data-driven decision-making and seize new opportunities with confidence."
+              type="p5-m"
+              color="text-color-neutral3"
+            />
+          </div>
         </div>
 
         {/* Footer */}
 
-        <div className="flex items-center justify-between border-t py-5 my-5">
+        <div className="flex items-center justify-between border-t py-5 my-2">
           <TextGroup
             text="© 2023. Risk Wise. All Rights Reserved."
             type="p5-m"
