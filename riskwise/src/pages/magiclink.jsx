@@ -18,7 +18,7 @@ const MagicLink = () => {
     <div className="flex min-h-screen">
       <LeftSection />
       <div className="basis-1/3 px-7 my-auto flex items-center justify-center">
-        <div className="w-[350px]">
+        <div className="w-[450px]">
           <TextGroup text="Risk Wise" type="h4-b" />
           <TextGroup text="." type="h4-b" color="text-color-error1" />
           <div className="mt-10 3xl:mt-[107px]">
