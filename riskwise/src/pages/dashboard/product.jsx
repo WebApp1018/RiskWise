@@ -8,7 +8,6 @@ import { ProductService } from "../../service/ProductService";
 import { FilterMatchMode, FilterOperator } from "primereact/api";
 import { MultiSelect } from "primereact/multiselect";
 import { Dropdown } from "primereact/dropdown";
-import { InputText } from "primereact/inputtext";
 
 const Product = () => {
   // const [showSidebar, setShowSidebar] = useState(true);
@@ -27,6 +26,11 @@ const Product = () => {
     { name: "Clothing" },
     { name: "Electronics" },
   ]);
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode((prevMode) => !prevMode);
+  };
 
   const categoryItemTemplate = (option) => {
     return (
@@ -44,6 +48,15 @@ const Product = () => {
       clearFilter();
     });
   }, []);
+
+  useEffect(() => {
+    const body = document.body;
+    if (darkMode) {
+      body.classList.add("dark");
+    } else {
+      body.classList.remove("dark");
+    }
+  }, [darkMode]);
 
   const storeBodyTemplate = (rowData) => {
     return (
@@ -182,7 +195,7 @@ const Product = () => {
 
   const statusBodyTemplate = (rowData) => {
     return (
-      <span className="bg-[#dbeafe] text-[#1e40af] text-xs font-medium px-2 py-0.5 rounded dark:bg-[#1e3a8a] dark:text-[##93c5fd]">
+      <span className="bg-[#dbeafe] text-[#1e40af] dark:text-gray-300 text-xs font-medium px-2 py-0.5 rounded dark:bg-[#1e3a8a] dark:text-[##93c5fd]">
         {typeof rowData === "string" ? rowData : rowData.inventoryStatus}
       </span>
     );
@@ -196,16 +209,16 @@ const Product = () => {
     return (
       <div className="p-3">
         <div className="flex items-center justify-start gap-2">
-          <div className="bg-gray-50 rounded-lg w-1/4 flex items-center justify-center py-1">
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-lg w-1/4 flex items-center justify-center py-1">
             <img src="/images/imac-front-image.png" width="130px" alt="" />
           </div>
-          <div className="bg-gray-50 rounded-lg w-1/4 flex items-center justify-center py-1">
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-lg w-1/4 flex items-center justify-center py-1">
             <img src="/images/imac-front-image.png" width="130px" alt="" />
           </div>
-          <div className="bg-gray-50 rounded-lg w-1/4 flex items-center justify-center py-1">
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-lg w-1/4 flex items-center justify-center py-1">
             <img src="/images/imac-front-image.png" width="130px" alt="" />
           </div>
-          <div className="bg-gray-50 rounded-lg w-1/4 flex items-center justify-center py-1">
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-lg w-1/4 flex items-center justify-center py-1">
             <img src="/images/imac-front-image.png" width="130px" alt="" />
           </div>
         </div>
@@ -311,138 +324,182 @@ const Product = () => {
     //   {/* <Header showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
     //   <Sidebar showSidebar={showSidebar} /> */}
     // </div>
-    <PrimeReactProvider value={{ unstyled: true, pt: Tailwind }}>
-      <div className="bg-gray-50 dark:bg-gray-900 py-3 sm:py-5">
-        <div className="px-4 mx-auto max-w-screen-2xl lg:px-12">
-          <div className="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
-            <div className="px-4 lg:flex-row lg:space-x-4">
-              <DataTable
-                dataKey="id"
-                ref={dt}
-                value={products}
-                selectionMode={rowClick ? null : "checkbox"}
-                selection={selectedProducts}
-                onSelectionChange={(e) => setSelectedProducts(e.value)}
-                filters={filters}
-                paginator
-                rows={5}
-                expandedRows={expandedRows}
-                onRowToggle={(e) => setExpandedRows(e.data)}
-                onRowExpand={onRowExpand}
-                onRowCollapse={onRowCollapse}
-                rowExpansionTemplate={rowExpansionTemplate}
-                emptyMessage="No products found."
-                header={header}
-                loading={loading}
-                paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-                currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products"
-                pt={{
-                  header: "bg-white border-y-0",
-                  paginator: "bg-red-100",
-                }}
-              >
-                <Column
-                  expander={allowExpansion}
-                  style={{ width: "2rem" }}
-                  exportable={false}
-                />
-                <Column
-                  selectionMode="multiple"
-                  headerStyle={{ width: "2rem" }}
-                  exportable={false}
-                ></Column>
-                <Column
-                  field="name"
-                  header="Product"
-                  filter
-                  filterField="name"
-                  filterPlaceholder="Search by name"
-                  filterMenuStyle={{
-                    boxShadow:
-                      "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+    <div className="bg-gray-50 dark:bg-gray-800 py-3 sm:py-5">
+      <label className="relative inline-flex items-center cursor-pointer mr-3 mx-14">
+        <input
+          type="checkbox"
+          className="sr-only peer"
+          onChange={toggleDarkMode}
+        />
+        <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-white peer-checked:bg-blue-600"></div>
+        <span className="ml-1 text-sm font-medium text-gray-900 dark:text-white">
+          {darkMode ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+              />
+            </svg>
+          )}
+        </span>
+      </label>
+      <PrimeReactProvider value={{ unstyled: true, pt: Tailwind }}>
+        <div className="bg-gray-50 dark:bg-gray-800 py-3 sm:py-5">
+          <div className="px-4 mx-auto max-w-screen-2xl lg:px-12">
+            <div className="relative overflow-hidden bg-white shadow-md dark:bg-gray-900 sm:rounded-lg">
+              <div className="px-4 lg:flex-row lg:space-x-4">
+                <DataTable
+                  dataKey="id"
+                  ref={dt}
+                  value={products}
+                  selectionMode={rowClick ? null : "checkbox"}
+                  selection={selectedProducts}
+                  onSelectionChange={(e) => setSelectedProducts(e.value)}
+                  filters={filters}
+                  paginator
+                  rows={5}
+                  expandedRows={expandedRows}
+                  onRowToggle={(e) => setExpandedRows(e.data)}
+                  onRowExpand={onRowExpand}
+                  onRowCollapse={onRowCollapse}
+                  rowExpansionTemplate={rowExpansionTemplate}
+                  emptyMessage="No products found."
+                  header={header}
+                  loading={loading}
+                  paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
+                  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products"
+                  pt={{
+                    header: "bg-white border-y-0",
+                    paginator: "bg-red-100",
+                    bodyrow: "dark:hover:bg-gray-800",
                   }}
-                  showFilterMatchModes={false}
-                  body={imageBodyTemplate}
-                />
-                <Column
-                  field="code"
-                  header="Sku"
-                  filter
-                  filterField="code"
-                  filterPlaceholder="Search by code"
-                  filterMenuStyle={{
-                    boxShadow:
-                      "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
-                  }}
-                  showFilterMatchModes={false}
-                  sortable
-                />
-                <Column
-                  field="store.name"
-                  header="Store"
-                  filterField="store.name"
-                  style={{ minWidth: "12rem" }}
-                  body={storeBodyTemplate}
-                  filter
-                  filterPlaceholder="Search by store"
-                  showFilterMatchModes={false}
-                  sortable
-                />
-                <Column
-                  field="price"
-                  filter
-                  filterField="price"
-                  filterMenuStyle={{
-                    boxShadow:
-                      "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
-                  }}
-                  dataType="numeric"
-                  header="Price"
-                  sortable
-                  body={priceBodyTemplate}
-                />
-                <Column
-                  field="category.name"
-                  header="Category"
-                  sortable
-                  filter
-                  filterField="category"
-                  filterElement={categoryRowFilterTemplate}
-                  filterMenuStyle={{
-                    boxShadow:
-                      "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
-                  }}
-                  showFilterMatchModes={false}
-                />
-                <Column
-                  field="rating"
-                  header="Reviews"
-                  // filter
-                  // filterField="rating"
-                  dataType="numeric"
-                  sortable
-                  body={ratingBodyTemplate}
-                  style={{ width: "100px" }}
-                />
-                <Column
-                  field="inventoryStatus"
-                  header="Status"
-                  filter
-                  filterElement={statusRowFilterTemplate}
-                  filterMenuStyle={{
-                    boxShadow:
-                      "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
-                  }}
-                  showFilterMatchModes={false}
-                  sortable
-                  body={statusBodyTemplate}
-                />
-              </DataTable>
+                >
+                  <Column
+                    expander={allowExpansion}
+                    style={{ width: "2rem" }}
+                    exportable={false}
+                  />
+                  <Column
+                    selectionMode="multiple"
+                    headerStyle={{ width: "2rem" }}
+                    exportable={false}
+                  ></Column>
+                  <Column
+                    field="name"
+                    header="Product"
+                    filter
+                    filterField="name"
+                    filterPlaceholder="Search by name"
+                    filterMenuStyle={{
+                      boxShadow:
+                        "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+                    }}
+                    showFilterMatchModes={false}
+                    body={imageBodyTemplate}
+                  />
+                  <Column
+                    field="code"
+                    header="Sku"
+                    filter
+                    filterField="code"
+                    filterPlaceholder="Search by code"
+                    filterMenuStyle={{
+                      boxShadow:
+                        "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+                    }}
+                    showFilterMatchModes={false}
+                    sortable
+                  />
+                  <Column
+                    field="store.name"
+                    header="Store"
+                    filterField="store.name"
+                    style={{ minWidth: "12rem" }}
+                    body={storeBodyTemplate}
+                    filter
+                    filterPlaceholder="Search by store"
+                    showFilterMatchModes={false}
+                    sortable
+                  />
+                  <Column
+                    field="price"
+                    filter
+                    filterField="price"
+                    filterMenuStyle={{
+                      boxShadow:
+                        "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+                    }}
+                    dataType="numeric"
+                    header="Price"
+                    sortable
+                    body={priceBodyTemplate}
+                  />
+                  <Column
+                    field="category.name"
+                    header="Category"
+                    sortable
+                    filter
+                    filterField="category"
+                    filterElement={categoryRowFilterTemplate}
+                    filterMenuStyle={{
+                      boxShadow:
+                        "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+                    }}
+                    showFilterMatchModes={false}
+                  />
+                  <Column
+                    field="rating"
+                    header="Reviews"
+                    // filter
+                    // filterField="rating"
+                    dataType="numeric"
+                    sortable
+                    body={ratingBodyTemplate}
+                    style={{ width: "100px" }}
+                  />
+                  <Column
+                    field="inventoryStatus"
+                    header="Status"
+                    filter
+                    filterElement={statusRowFilterTemplate}
+                    filterMenuStyle={{
+                      boxShadow:
+                        "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+                    }}
+                    showFilterMatchModes={false}
+                    sortable
+                    body={statusBodyTemplate}
+                  />
+                </DataTable>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </PrimeReactProvider>
+      </PrimeReactProvider>
+    </div>
   );
 };
 

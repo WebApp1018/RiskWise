@@ -10,6 +10,7 @@ import Privacy from "./pages/privacy";
 import MagicLink from "./pages/magiclink";
 import Dashboard from "./pages/dashboard";
 import Product from "./pages/dashboard/product";
+import Report from "./pages/dashboard/report";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
 
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard/product" element={<Product />} />
+        <Route path="/dashboard/report" element={<Report />} />
       </Routes>
     </div>
   );

@@ -74,5 +74,10 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  darkMode: "class",
+  plugins: [
+    require("flowbite/plugin")({
+      charts: true,
+    }),
+  ],
 };
